@@ -2,7 +2,7 @@
 
 # REQUIREMENTS TO BUILD
 Cargo
-.
+\n
 Some browser(chrome, firefox, etc)
 
 # DESCRIPTION
