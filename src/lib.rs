@@ -55,13 +55,13 @@ impl Drop for ThreadPool {
             self.sender.send(Message::Terminate).unwrap();
         }
 
-        for worker in &mut self.workers {
-            println!("Shutting down worker {}", worker.id);
+         for worker in &mut self.workers {
+             println!("Shutting down worker {}", worker.id);
 
-            if let Some(thread) = worker.thread.take() {
-                thread.join().unwrap();
-            }
-        }
+             if let Some(thread) = worker.thread.take() {
+                 thread.join().unwrap();
+             }
+         }
     }
 }
 

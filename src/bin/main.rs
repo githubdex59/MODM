@@ -8,12 +8,15 @@ use std::time::Duration;
 use server::ThreadPool;
 
 fn main() {
-    let listener = 
-        TcpListener::bind("0.0.0.0:7878").unwrap();
+    const ADDR: &str = "0.0.0.0:7878";
 
+    let listener = 
+        TcpListener::bind(ADDR).unwrap();
+    println!("Listening on http://{}", ADDR);
+    println!("Ctrl + C to stop.");
     let pool = ThreadPool::new(4);
 
-    for stream in listener.incoming().take(2) {
+    for stream in listener.incoming() {
         let stream = stream.unwrap();
 
         pool.execute( || {
