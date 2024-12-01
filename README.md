@@ -1,8 +1,8 @@
 # MODM-server
 
 # REQUIREMENTS TO BUILD
-Cargo
-\n
+Cargo<br>
+
 Some browser(chrome, firefox, etc)
 
 # DESCRIPTION
